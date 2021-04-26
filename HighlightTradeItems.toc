@@ -1,0 +1,9 @@
+## Interface: 11306
+## Title: HighlightTradeItems
+## Version: 1.0
+## Author: Ron Krepps
+## Notes: Highlight raid items in your bag that can be traded to other players with a glowing aqua border.
+## SavedVariables: 
+## SavedVariablesPerCharacter: htiConfig
+
+HighlightTradeItems.lua
