@@ -31,14 +31,10 @@ function addon:ADDON_LOADED(arg1)
     end
 end
 
----
--- bag update event
 function addon:BAG_UPDATE(arg1)
     addon:refreshBag(arg1);
 end
 
----
--- backpack opened
 function addon:backpack_OnShow()
     local containerFrame = _G['ContainerFrame1'];
 
@@ -54,14 +50,10 @@ function addon:refreshAllBags()
     end
 end
 
----
--- open/close a bag
 function addon:bag_OnToggle(bagId)
     addon:refreshBag(bagId);
 end
 
----
--- refresh a single bag content
 function addon:refreshBag(bagId)
     local frameId = IsBagOpen(bagId);
 
@@ -76,8 +68,6 @@ function addon:refreshBag(bagId)
     end
 end
 
----
--- update border for a container' slot (bank and bag slots)
 function addon:updateContainerSlot(containerId, slotId, slotFrameName, show)
     local show = show or 1;
 
@@ -90,13 +80,9 @@ function addon:updateContainerSlot(containerId, slotId, slotFrameName, show)
     local itemId = GetContainerItemID(containerId, slotId);
 
     if (itemId and show == 1) then
-		local quality = select(3, GetItemInfo(itemId));
-		
-		--local itemName, itemLink, itemQuality = GetItemInfo(itemID);		
 		itemLocation = ItemLocation:CreateFromBagAndSlot(containerId, slotId);
-		
-		if addon:isItemTradeable(itemLocation) then
-		--if quality > 2 then
+				
+		if addon:isItemTradeable(itemLocation) then		
 			item.qborder:SetVertexColor(0.39, 1.0, 1.0);
             item.qborder:SetAlpha(1);
             item.qborder:Show();
@@ -108,8 +94,6 @@ function addon:updateContainerSlot(containerId, slotId, slotFrameName, show)
     end
 end
 
----
--- create a border texture for an inventory slot
 function addon:createBorder(name, parent, width, height, x, y)
     local x = x or 0;
     local y = y or 1;
@@ -138,7 +122,6 @@ function addon:isItemTradeable(itemLocation)
    end
 end
 
---- Slash commands
 SLASH_HTI1 = "/hti"
 SlashCmdList["HTI"] = function(msg)
     msg = string.lower(msg);

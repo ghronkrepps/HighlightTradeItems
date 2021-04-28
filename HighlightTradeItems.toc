@@ -2,7 +2,7 @@
 ## Title: HighlightTradeItems
 ## Version: 1.0
 ## Author: Ron Krepps
-## Notes: Highlight raid items in your bag that can be traded to other players with a glowing aqua border.
+## Notes: Highlights items in your bag that are able to be traded to other players
 ## SavedVariables: 
 ## SavedVariablesPerCharacter: htiConfig
 
