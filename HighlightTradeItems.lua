@@ -5,10 +5,6 @@ local tip = CreateFrame("GameTooltip","Tooltip",nil,"GameTooltipTemplate")
 
 local defaultSlotWidth, defaultSlotHeight = 68, 68;
 
-htiDefaultConfig = {
-    ['enabled'] = 1
-}
-
 addon:RegisterEvent('ADDON_LOADED');
 addon:RegisterEvent('PLAYER_ENTERING_WORLD');
 addon:RegisterEvent('BAG_UPDATE');
@@ -18,7 +14,7 @@ addon:SetScript('OnEvent', function(self, event, arg1) self[event](self, arg1) e
 function addon:PLAYER_ENTERING_WORLD()
 	if (not htiConfig) then		
 		htiConfig = {["enabled"] = true	}
-	end	
+	end
 end
 
 function addon:ADDON_LOADED(arg1)
